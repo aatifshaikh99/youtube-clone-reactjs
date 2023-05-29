@@ -10,7 +10,7 @@ const Feed = () => {
   useEffect(() => {
     document.getElementById("root").classList.remove("custom-h");
   }, []);
-// showing feed on homepage
+// showing feed
   return (
     <div className="flex flex-row h-[calc(100%-56px)]">
       <LeftNav />
@@ -21,7 +21,7 @@ const Feed = () => {
             searchResults?.map((item) => {
               if (item?.type !== "video") return false;
               return (
-                <VideoCard key={item?.video?.videoId} video={item?.video} />
+                <VideoCard key={Math.random()} video={item?.video} />
               );
             })}
         </div>

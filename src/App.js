@@ -9,7 +9,6 @@ import VideoDetails from "./components/VideoDetails";
 import { AppContext } from "./context/contextApi";
 
 function App() {
-  // console.log(process.env.REACT_APP_RAPID_API_KEY);
   return (
     <AppContext>
       <BrowserRouter>

@@ -30,6 +30,7 @@ const Header = () => {
   };
 
   const mobileMenuToggle = () => {
+    // console.log('toggle',mobileMenu);
     setMobileMenu(!mobileMenu);
   };
 
@@ -64,7 +65,7 @@ const Header = () => {
           <img className="h-full md:hidden" src={ytLogoMobile} alt="YouTube" />
         </Link>
       </div>
-      
+
       {/* Search Input code */}
       <div className="group flex items-center">
         <div className="flex h-8 md:h-10 md:ml-10 md:pl-5 border border-[#303030] rounded-l-3xl group-focus-within:border-blue-500 md:group-focus-within:ml-5 md:group-focus-within:pl-0">

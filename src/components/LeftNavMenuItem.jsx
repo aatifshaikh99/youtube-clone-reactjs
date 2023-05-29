@@ -15,4 +15,4 @@ const LeftNavMenuItem = ({ text, icon, className, action }) => {
   );
 };
 
-export default LeftNavMenuItem;
+export default LeftNavMenuItem;    
