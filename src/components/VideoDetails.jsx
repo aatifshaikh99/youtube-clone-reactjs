@@ -17,29 +17,27 @@ const VideoDetails = () => {
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
+    const fetchVideoDetails = () => {
+      setLoading(true);
+      fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
+        // console.log(id,'id');
+        // console.log(res);
+        setVideo(res);
+        setLoading(false);
+      });
+    };
+    const fetchRelatedVideos = () => {
+      setLoading(true);
+      fetchDataFromApi(`video/related-contents/?id=${id}`).then((res) => {
+        // console.log(res);
+        setRelatedVideos(res);
+        setLoading(false);
+      });
+    };
     fetchVideoDetails();
     fetchRelatedVideos();
-  }, [id]);
+  }, [id, setLoading]);
 
-  const fetchVideoDetails = () => {
-    setLoading(true);
-    fetchDataFromApi(`video/details/?id=${id}`).then((res) => {
-      // console.log(id,'id');
-      // console.log(res);
-      setVideo(res);
-      setLoading(false);
-    });
-  };
-
-  const fetchRelatedVideos = () => {
-    setLoading(true);
-    fetchDataFromApi(`video/related-contents/?id=${id}`).then((res) => {
-      // console.log(res);
-      setRelatedVideos(res);
-      setLoading(false);
-    });
-  };
-  
   return (
     <div className="flex justify-center flex-row h-[calc(100%-56px)] bg-black">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row">
